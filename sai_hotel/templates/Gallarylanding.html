@@ -1,0 +1,399 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title> GALLARY</title>
+  <link rel="shortcut icon" href="/static/assets/dist/img/Hotel-logo.jpg" type="logo">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/static/css/style.css">
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+</head>
+<body>
+  <section class="head">
+    <div class="container flex1">
+      <div class="scoial">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-youtube"></i>
+      </div>
+      <div class="logo">
+        <img src="/static/image/logo.png" alt="">
+      </div>
+      <div class="address">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>205 Brodipet, Gandhi Bhomma center, Ravulapalem ,India</span>
+      </div>
+    </div>
+  </section>
+
+  <header class="header">
+    <div class="container">
+      <nav class="navbar flex1">
+        <div class="sticky_logo logo">
+          <img src="/static/image/logo.png" alt="">
+        </div>
+
+        <ul class="nav-menu">
+          <li> <a href="/indexlanding">Home</a> </li>
+          <li> <a href="/aboutuslanding">About</a> </li>
+          <li> <a href="/roomslanding">Room</a> </li>   
+          <li> <a href="/Gallarylanding">Gallary</a> </li>
+          <li> <a href="/contactlanding">Contact</a> </li>
+        
+          <div class="navbar">
+            <div class="dropdown">
+                <button class="dropbtn">LOGIN
+                    
+                </button>
+                <div class="dropdown-content">
+                    <a href="/AdminLoginPage">Admin Login</a>
+                    <a href="/emploginpanel">Employee Login</a>
+                    <a href="/customerlogin">Customer Login</a>
+                </div>
+            </div>
+        </div>
+      </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+
+        <div class="head_contact">
+          <i class="fas fa-phone-volume"></i>
+          <span>+91 9866989896</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="home" id="home">
+    <div class="container">
+      <h1>Make Memories</h1>
+      <p>Discover the place where you have fun & enjoy a lot</p>
+      </div>
+    </div>
+  </section>
+  <br><br><br>
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: false,
+      dots: false,
+      autoplay: true,
+      slideTransition: 'linear',
+      autoplayTimeout: 4000,
+      autoplaySpeed: 4000,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 3
+        },
+        1000: {
+          items: 5
+        }
+      }
+    })
+  </script>
+
+  <section class="blog top" id="blog">
+    <div class="container">
+      <div class="heading">
+        <h5>GALLARY</h5>
+        <h3>Gallary updates</h3>
+      </div>
+
+      <div class="content grid mtop">
+        <div class="box">
+          <div class="img">
+            <img src="/static/image/g1.jpg" alt="">
+            <span>HOTEL</span>
+          </div>
+          <div class="text">
+            <div class="flex">
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img">
+            <img src="/static/image/g2.jpg" alt="">
+            <span>HOTEL</span>
+          </div>
+          <div class="text">
+            <div class="flex">
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img">
+            <img src="/static/image/g3.jpg" alt="">
+            <span>HOTEL</span>
+          </div>
+          <div class="text">
+            <div class="flex">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="blog top" id="blog">
+    <div class="container">
+      <div class="heading">
+        
+      </div>
+
+      <div class="content grid mtop">
+        <div class="box">
+          <div class="img">
+            <img src="/static/image/g4.jpg" alt="">
+            <span>HOTEL</span>
+          </div>
+          <div class="text">
+            <div class="flex">
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img">
+            <img src="/static/image/g5.jpg" alt="">
+            <span>HOTEL</span>
+          </div>
+          <div class="text">
+            <div class="flex">
+            </div>
+            
+            
+          </div>
+        </div>
+        <div class="box">
+          <div class="img">
+            <img src="/static/image/g1.jpg" alt="">
+            <span>HOTEL</span>
+          </div>
+          <div class="text">
+            <div class="flex">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container top">
+      <div class="subscribe" id="contact">
+        <h2>Contact Through mail</h2>
+        <p> Enter your email We will Get In Touch In 24 Hours, We provide 24/7 Services,Thank You....</p>
+        <div class="input flex"onclick="myFunction()">
+          <input type="email" placeholder="Your Email address">
+          <button class="flex1">
+            <span>Contact</span>
+            <i class="fas fa-arrow-circle-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="content grid  top">
+        <div class="box">
+          <div class="logo">
+            <img src="/static/image/logo.png" alt="">
+          </div>
+          <p> SDS Group of Hotel's Annual General Meeting (AGM) was last held on 10 January 2023 and as per records from Ministry of Corporate Affairs (MCA), its balance sheet was last filed on 01 December 2022.
+                                        
+            Directors of SDS Group of Hotels are Durga Prasad, Sahith and Sai Kumar.
+            
+            SDS Grouop of Hotel's Corporate Identification Number is (CIN) U55101AP2008PTC179405 and its registration number is 179405.Its Email address is sds_nd@yahoo.co.in.</p>
+          <div class="social flex">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-youtube"></i>
+          </div>
+        </div>
+
+        <div class="box">
+          <h2>Quick Links</h2>
+          <ul>
+            <li><i class="fas fa-angle-double-right"></i>Spa Gallery</li>
+            <li><i class="fas fa-angle-double-right"></i>Reservation</li>
+            <li><i class="fas fa-angle-double-right"></i>FAQ</li>
+            <li><i class="fas fa-angle-double-right"></i>Contact</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h2>Services</h2>
+          <ul>
+            <li><i class="fas fa-angle-double-right"></i>Restaurant</li>
+            <li><i class="fas fa-angle-double-right"></i>Swimming Pool</li>
+            <li><i class="fas fa-angle-double-right"></i>Wellness & Spa</li>
+          
+            <li><i class="fas fa-angle-double-right"></i>Events</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h2>Services</h2>
+          <div class="icon flex">
+            <div class="i">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="text">
+              <h3>Address</h3>
+              <p>205 Brodipet, Gandhi Bhomma center, Ravulapalem ,India  (21+ Branches)</p>
+              
+            </div>
+          </div>
+          <div class="icon flex">
+            <div class="i">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="text">
+              <h3>Phone</h3>
+              <p>>+91 9866989896</p>
+            </div>
+          </div>
+          <div class="icon flex">
+            <div class="i">
+              <i class="far fa-envelope"></i>
+            </div>
+            <div class="text">
+              <h3>Email</h3>
+              <p>sds@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+  <script src="/static/js/jquery.countdown.js" charset="utf-8"></script>
+  <script src="/static/js/jquery.countdown.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    $('#time').countdown('2024/01/01', function(event) {
+      $(this).html(event.strftime(
+        '<div class="clock"><span>%d</span> <p>Days</p></div> ' +
+        '<div class="clock"><span>%H</span> <p>Hours</p></div> ' +
+        '<div class="clock"><span>%M</span> <p>Minutes</p></div> ' +
+        '<div class="clock"><span>%S</span> <p>Seconds</p></div> '
+      ));
+    });
+  </script>
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      dots: false,
+      navText: ["<i class='far fa-long-arrow-alt-left'></i>", "<i class='far fa-long-arrow-alt-right'></i>"],
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 1
+        },
+        1000: {
+          items: 1
+        }
+      }
+    })
+  </script>
+
+
+
+
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", mobliemmenu);
+
+    function mobliemmenu() {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    }
+
+    window.addEventListener("scroll", function() {
+      var header = document.querySelector("header");
+      header.classList.toggle("sticky", window.scrollY > 0)
+    })
+  </script>
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      dots: false,
+      navText: ["<i class='far fa-long-arrow-alt-left'></i>", "<i class='far fa-long-arrow-alt-right'></i>"],
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 1
+        },
+        1000: {
+          items: 1
+        }
+      }
+    })
+  </script>
+
+
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: false,
+      dots: false,
+      navText: ["<i class='far fa-long-arrow-alt-left'></i>", "<i class='far fa-long-arrow-alt-right'></i>"],
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 1
+        },
+        1000: {
+          items: 1
+        }
+      }
+    })
+  </script>
+
+  <script src="/static/assets/dist/js/jQuery.style.switcher.min.js" type="text/javascript"></script> <script>
+    function myFunction() {
+        if (window.confirm('Click here to Confirm Email')) {
+            alert('Our team will connect in 24Hrs');
+        }
+    }
+</script>
+
+
+</body>
+
+
+</html>

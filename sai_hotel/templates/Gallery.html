@@ -1,0 +1,847 @@
+    <!DOCTYPE html>
+    {% load static %}
+    <html lang=en>
+    <head>
+        <meta charset=utf-8>
+        <meta http-equiv=X-UA-Compatible content="IE=edge">
+        <meta name=viewport content="width=device-width, initial-scale=1">
+        <meta name=description content="">
+        <meta name=author content="">
+        <title>Gallery</title>
+        <link rel="shortcut icon" href="/static/assets/dist/img/Hotel-logo.jpg" type="logo">
+        <script src="/static/../../../../ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+        <script>
+            WebFont.load({
+                google: {
+                    families: ['Alegreya+Sans:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i', 'Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i', 'Open Sans']
+                }
+            });
+        </script>
+        <link href="/static/assets/dist/css/base.css" rel=stylesheet type="text/css"/>
+        <link href="/static/https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="/static/assets/plugins/emojionearea/emojionearea.min.css" rel=stylesheet type="text/css"/>
+        <link href="/static/assets/plugins/monthly/monthly.min.css" rel=stylesheet type="text/css"/>
+        <link href="/static/assets/plugins/amcharts/export.css" rel=stylesheet type="text/css"/>
+        <link href="/static/assets/dist/css/component_ui.min.css" rel=stylesheet type="text/css"/>
+        <link id=defaultTheme href="/static/assets/dist/css/skins/skin-dark-1.min.css" rel=stylesheet type="text/css"/>
+        <link href="/static/assets/dist/css/custom.css" rel=stylesheet type="text/css"/>        
+    </head>
+    <body>
+        <div id=wrapper class="wrapper animsition">
+            <!-- Navigation -->
+            <nav class="navbar navbar-fixed-top">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="material-icons">apps</i>
+                    </button>
+                    <a class="navbar-brand" href="/index">
+                    <p>SDS Hotels</p>
+                       
+                        <!--span>SDS Group of Hotels</span-->
+                    </a>
+                </div>
+                <div class="nav-container">
+                    <!-- /.navbar-header -->
+                    <ul class="nav navbar-nav hidden-xs">
+                        
+                        <!-- /.Full page search -->
+                        <li><a id="menu-toggle" href="#"><i class="material-icons">apps</i></a></li>
+                        
+                        <li><a href="/payments" target="_blank" class="btn-buy hidden-xs hidden-sm hidden-md">Book Now</a></li>
+                    </ul>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li class="dropdown">
+                            
+                            <ul class="dropdown-menu dropdown-messages">
+                               
+                                <li>
+                                   
+                                </li>
+                                <li>
+                                   
+                                </li>
+                                <li>
+                                  
+                                </li>
+                                <li>
+                                  
+                                </li>
+                               
+                            </ul> <!-- /.Dropdown-messages -->
+                        </li><!-- /.dropdown -->
+                        
+                       
+                        <!-- /.Dropdown -->
+                       
+                        <li class="log_out">
+                            <a href="/AdminLoginPage">
+                                <i class="material-icons">power_settings_new</i>
+                            </a>
+                        </li><!-- /.Log out -->
+                    </ul> <!-- /.navbar-top-links -->
+                </div>
+            </nav>
+            <div class="sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="nav-heading "> <span> Main&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                        <li>
+                            <a href="/AdminLoginPage" class="material-ripple"><i class="material-icons">home</i> Dashboard <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li><a href="/report">Daily reports</a></li>
+                                <li><a href="/index">About hotel</a></li>
+                                <li>
+                                    <a href="/Gallery">Gallery</a>
+                                    
+                                </li>
+                                </ul>
+                        </li>
+                        
+                        </li>
+                        <li class="nav-heading "> <span>Customer&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                        <li>
+                            <a href="#" class="material-ripple"><i class="material-icons">people</i> Customer Details<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li><a href="/addcustomers">Add Customer</a></li>
+                                <li><a href="/customerdetails">View Customer Details</a></li>
+                                <li><a href="/customerprofile">Customer ratings</a></li>
+                            </ul>
+                        </li>
+                    </li>
+                </li>
+                <li class="nav-heading "> <span>Employee &nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                <li>
+                    <a href="#" class="material-ripple"><i class="material-icons">person_outline</i>Employee details<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="/addemployee">Add Employee</a></li>
+                        <li><a href="/Employeelist">Employee list</a></li>
+                        <li><a href="/leave">Leaves</a></li>
+                        <li><a href="/Attendence">Attendence</a></li>
+                    </ul>
+                </li>
+                <li class="nav-heading "> <span>Hotels&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                
+                <li>
+                    <a href="#" class="material-ripple"><i class="material-icons">hotel</i> Hotels<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="/Map">Locations of Hotel</a></li>
+                    
+                        <li><a href="/room1">Rooms</a></li>
+                        <li><a href="/roomhistory">RoomHistory</a></li>
+                        <li><a href="/pricing">Pricing Of Every Room</a></li>
+                        <li><a href="/party">Parties & Function Halls</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/events" class="material-ripple"><i class="material-icons">local_offer</i> Events On Special Day's<span class="fa arrow"></span></a>  
+                </li>
+                <li class="nav-heading "> <span>Payments&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+               <li> <a href="#" class="material-ripple"><i class="material-icons">credit_card</i>Payments<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="/payments">Payment</a></li>
+                        <li><a href="/paymenthistory">Payment History</a></li>
+                        <li><a href="/invoice">Invoice</a></li>
+                    </ul>
+                    </li>
+
+                    <li class="nav-heading "><span>Others&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                    <li>
+                        <a href="#" class="material-ripple"><i class="material-icons">store_mall_directory</i>Other Services<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="/Transportation">Cab Services</a></li>
+                            <li><a href="/cabhistory">Cab History</a></li>  
+                            <li><a href="/RestarantMenu">Restaruent</a></li>
+                            <li><a href="/ResPay">Payment</a></li>
+                            <li><a href="/Bar">Bar</a></li>
+                            <li><a href="/spa">Spa</a></li>
+
+                        </ul>
+                    </li>
+                        <li class="nav-heading "> <span>Contact Details&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                        <li>
+                            <a href="#" class="material-ripple"><i class="material-icons">phone_in_talk</i> Contact Us<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li> <a href="/Contact">Contact </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.Left Sidebar-->
+            <div class="side-bar right-bar">
+                <div class="">
+                    <!-- Nav tabs --> <li>
+                    <a href="#" class="material-ripple"><i class="material-icons">hotel</i> Hotels<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="/Map">Locations of Hotel</a></li>
+                    
+                        <li><a href="/room1">Rooms</a></li>
+                        <li><a href="/roomhistory">RoomHistory</a></li>
+                        <li><a href="/pricing">Pricing Of Every Room</a></li>
+                        <li><a href="/party">Parties & Function Halls</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/events" class="material-ripple"><i class="material-icons">local_offer</i> Events On Special Day's<span class="fa arrow"></span></a>
+                    
+                       
+                </li>
+                <li class="nav-heading "> <span>Payments&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+               <li> <a href="#" class="material-ripple"><i class="material-icons">credit_card</i>Payments<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="/payments">Payment</a></li>
+                        <li><a href="/paymenthistory">Payment History</a></li>
+                        <li><a href="/invoice">Invoice</a></li>
+                    </ul>
+                    </li>
+
+                    <li class="nav-heading "><span>Others&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                    <li>
+                        <a href="#" class="material-ripple"><i class="material-icons">store_mall_directory</i>Other Services<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="/Transportation">Cab Services</a></li>
+                            <li><a href="/cabhistory">Cab History</a></li>  
+                            <li><a href="/RestarantMenu">Restaruent</a></li>
+                            <li><a href="/ResPay">Payment</a></li>
+                            <li><a href="/Bar">Bar</a></li>
+                            <li><a href="/spa">Spa</a></li>
+
+                        </ul>
+                    </li>
+                    <ul class="nav nav-tabs right-sidebar-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="/static/#home" aria-controls="home" role="tab" data-toggle="tab"><i class="material-icons">home</i></a></li>
+                        <li role="presentation"><a href="/static/#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="material-icons">person_add</i></a></li>
+                        <li role="presentation"><a href="/static/#messages" aria-controls="messages" role="tab" data-toggle="tab"><i class="material-icons">chat</i></a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade  in active" id="home">
+                            <ul id="styleOptions" title="switch styling">
+                                <li><b>Dark Skin</b></li>
+                                <li><a href="/static/javascript: void(0)" data-theme="skin-blue.min"><img src="/static/assets/dist/img/theme-color/1.jpg" alt=""/></a></li>
+                                <li><a href="/static/javascript: void(0)" data-theme="skin-dark.min"><img src="/static/assets/dist/img/theme-color/2.jpg" alt=""/></a></li>
+                                <li><a href="/static/javascript: void(0)" data-theme="skin-red-light.min" class="skin-logo"><img src="/static/assets/dist/img/theme-color/5.jpg" alt=""/></a></li>
+                                <li><b>Dark Skin sidebar</b></li>
+                                <li><a href="/static/javascript: void(0)" data-theme="skin-default.min"><img src="/static/assets/dist/img/theme-color/7.jpg" alt=""/> </a></li>
+                                <li><a href="/static/javascript: void(0)" data-theme="skin-red-dark.min"><img src="/static/assets/dist/img/theme-color/6.jpg" alt=""/></a></li>
+                                <li><a href="/static/javascript: void(0)" data-theme="skin-dark-1.min"><img src="/static/assets/dist/img/theme-color/8.jpg" alt=""/></a></li>
+                                <li><b>Light Skin sidebar</b></li>
+                                <li><a href="/static/javascript: void(0)" data-theme="skin-default-light.min" class="skin-logo"><img src="/static/assets/dist/img/theme-color/3.jpg" alt=""/></a></li>
+                                <li><a href="/static/javascript: void(0)" data-theme="skin-white.min"><img src="/static/assets/dist/img/theme-color/4.jpg" alt=""/></a> </li>
+                        </div>
+                        
+                        <div role="tabpanel" class="tab-pane fade " id="messages">
+                            <div class="message_widgets">
+                                <a href="#">
+                                    <div class="inbox-item">
+                                        <div class="inbox-item-img"><img src="/static/assets/dist/img/avatar.png" class="img-circle" alt=""></div>
+                                        <strong class="inbox-item-author">Naeem Khan</strong>
+                                        <span class="inbox-item-date">-13:40 PM</span>
+                                        <p class="inbox-item-text">Hey! there I'm available...</p>
+                                        <span class="profile-status available pull-right"></span>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="inbox-item">
+                                        <div class="inbox-item-img"><img src="/static/assets/dist/img/avatar2.png" class="img-circle" alt=""></div>
+                                        <strong class="inbox-item-author">Sala Uddin</strong>
+                                        <span class="inbox-item-date">-13:40 PM</span>
+                                        <p class="inbox-item-text">Hey! there I'm available...</p>
+                                        <span class="profile-status away pull-right"></span>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="inbox-item">
+                                        <div class="inbox-item-img"><img src="/static/assets/dist/img/avatar3.png" class="img-circle" alt=""></div>
+                                        <strong class="inbox-item-author">Mozammel</strong>
+                                        <span class="inbox-item-date">-13:40 PM</span>
+                                        <p class="inbox-item-text">Hey! there I'm available...</p>
+                                        <span class="profile-status busy pull-right"></span>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="inbox-item">
+                                        <div class="inbox-item-img"><img src="/static/assets/dist/img/avatar4.png" class="img-circle" alt=""></div>
+                                        <strong class="inbox-item-author">Tanzil</strong>
+                                        <span class="inbox-item-date">-13:40 PM</span>
+                                        <p class="inbox-item-text">Hey! there I'm available...</p>
+                                        <span class="profile-status offline pull-right"></span>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="inbox-item">
+                                        <div class="inbox-item-img"><img src="/static/assets/dist/img/avatar5.png" class="img-circle" alt=""></div>
+                                        <strong class="inbox-item-author">Amir Khan</strong>
+                                        <span class="inbox-item-date">-13:40 PM</span>
+                                        <p class="inbox-item-text">Hey! there I'm available...</p>
+                                        <span class="profile-status available pull-right"></span>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="inbox-item">
+                                        <div class="inbox-item-img"><img src="/static/assets/dist/img/avatar.png" class="img-circle" alt=""></div>
+                                        <strong class="inbox-item-author">Salman Khan</strong>
+                                        <span class="inbox-item-date">-13:40 PM</span>
+                                        <p class="inbox-item-text">Hey! there I'm available...</p>
+                                        <span class="profile-status available pull-right"></span>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="inbox-item">
+                                        <div class="inbox-item-img"><img src="/static/assets/dist/img/avatar.png" class="img-circle" alt=""></div>
+                                        <strong class="inbox-item-author">Tahamina</strong>
+                                        <span class="inbox-item-date">-13:40 PM</span>
+                                        <p class="inbox-item-text">Hey! there I'm available...</p>
+                                        <span class="profile-status available pull-right"></span>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="inbox-item">
+                                        <div class="inbox-item-img"><img src="/static/assets/dist/img/avatar4.png" class="img-circle" alt=""></div>
+                                        <strong class="inbox-item-author">Jhon</strong>
+                                        <span class="inbox-item-date">-13:40 PM</span>
+                                        <p class="inbox-item-text">Hey! there I'm available...</p>
+                                        <span class="profile-status offline pull-right"></span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.Right Sidebar -->
+            <!-- /.Navbar  Static Side -->
+            <div class="control-sidebar-bg"></div>
+                <div id="page-wrapper">
+                    <div class="content">
+                        <div class="content-header">
+                            <div class="header-icon">
+                                <i class="pe-7s-photo"></i>
+                            </div>
+                            <div class="header-title">
+                                <h1>Gallery</h1>
+                                <small>All Images</small>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="panel panel-bd">
+                                    <div class="panel-body">
+                                        
+                                        <div id="carousel-1" class="carousel slide" data-ride="carousel">
+                                           
+                                            <ol class="carousel-indicators">
+                                                <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                                                <li data-target="#carousel-1" data-slide-to="1"></li>
+                                                <li data-target="#carousel-1" data-slide-to="2"></li>
+                                                <li data-target="#carousel-1" data-slide-to="3"></li>
+                                                <li data-target="#carousel-1" data-slide-to="4"></li>
+                                                <li data-target="#carousel-1" data-slide-to="5"></li>
+                                                <li data-target="#carousel-1" data-slide-to="6"></li>
+                                                <li data-target="#carousel-1" data-slide-to="7"></li>
+                                                <li data-target="#carousel-1" data-slide-to="8"></li>
+                                                <li data-target="#carousel-1" data-slide-to="9"></li>
+                                                <li data-target="#carousel-1" data-slide-to="10"></li>
+                                            </ol>
+                                            
+                                            <div class="carousel-inner" role="listbox">
+                                                <div class="item active">
+                                                    <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1406097928/Domestic%20Hotels/Hotels_Goa/Salida%20Del%20Sol%20-%20Business%20Boutique%20Hotel/Lobby.jpg" alt="...">
+                                                    <div class="carousel-caption">
+                                                        <h3 class="text-white"></h3>
+                                                        <p class="text-white"></p>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1467563100/Domestic%20Hotels/Hotels_Goa/Salida%20Del%20Sol%20-%20Business%20Boutique%20Hotel/Festive%20Period%20-%20Deluxe%20%20Room/Festive_Period_-_Deluxe__Room_LTifuy.jpg" alt="...">
+                                                    <div class="carousel-caption">
+                                                        <h3 class="text-white"></h3>
+                                                        <p class="text-white"></p>
+                                                    </div>
+                                                </div>
+                                                    <div class="item">
+                                                        <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1467563105/Domestic%20Hotels/Hotels_Goa/Salida%20Del%20Sol%20-%20Business%20Boutique%20Hotel/Standard%20Room/Standard_Room_ICRADe.jpg" alt="...">
+                                                        <div class="carousel-caption">
+                                                            <h3 class="text-white"></h3>
+                                                            <p class="text-white"></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item">
+                                                        <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1406097872/Domestic%20Hotels/Hotels_Goa/Salida%20Del%20Sol%20-%20Business%20Boutique%20Hotel/Suite_Room2.jpg" alt="...">
+                                                        <div class="carousel-caption">
+                                                            <h3 class="text-white"></h3>
+                                                            <p class="text-white"></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item">
+                                                        <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1406097908/Domestic%20Hotels/Hotels_Goa/Salida%20Del%20Sol%20-%20Business%20Boutique%20Hotel/Restaurant.jpg" alt="...">
+                                                        <div class="carousel-caption">
+                                                            <h3 class="text-white"></h3>
+                                                            <p class="text-white"></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item">
+                                                        <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1406097883/Domestic%20Hotels/Hotels_Goa/Salida%20Del%20Sol%20-%20Business%20Boutique%20Hotel/Suite_Room.jpg" alt="...">
+                                                        <div class="carousel-caption">
+                                                            <h3 class="text-white"></h3>
+                                                            <p class="text-white"></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item">
+                                                        <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1406097958/Domestic%20Hotels/Hotels_Goa/Salida%20Del%20Sol%20-%20Business%20Boutique%20Hotel/Deluxe_Room1.jpg" alt="...">
+                                                        <div class="carousel-caption">
+                                                            <h3 class="text-white"></h3>
+                                                            <p class="text-white"></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item">
+                                                        <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1406097872/Domestic%20Hotels/Hotels_Goa/Salida%20Del%20Sol%20-%20Business%20Boutique%20Hotel/TEJADO.jpg" alt="...">
+                                                        <div class="carousel-caption">
+                                                            <h3 class="text-white"></h3>
+                                                            <p class="text-white"></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item">
+                                                        <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1406097858/Domestic%20Hotels/Hotels_Goa/Salida%20Del%20Sol%20-%20Business%20Boutique%20Hotel/Deluxe_Bathroom.jpg" alt="...">
+                                                        <div class="carousel-caption">
+                                                            <h3 class="text-white"></h3>
+                                                            <p class="text-white"></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item">
+                                                        <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1406098053/Domestic%20Hotels/Hotels_Goa/Salida%20Del%20Sol%20-%20Business%20Boutique%20Hotel/Overview.jpg" alt="...">
+                                                        <div class="carousel-caption">
+                                                            <h3 class="text-white"></h3>
+                                                            <p class="text-white"></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item">
+                                                        <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1406097868/Domestic%20Hotels/Hotels_Goa/Salida%20Del%20Sol%20-%20Business%20Boutique%20Hotel/Suite_Bathroom.jpg" alt="...">
+                                                        <div class="carousel-caption">
+                                                            <h3 class="text-white"></h3>
+                                                            <p class="text-white"></p>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            
+                                            <a class="left carousel-control" href="/static/#carousel-1" role="button" data-slide="prev">
+                                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                            <a class="right carousel-control" href="/static/#carousel-1" role="button" data-slide="next">
+                                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </div>  
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="panel panel-bd">
+                                    <div class="panel-body">
+                                        
+                                        <div id="carousel-2" class="carousel slide" data-ride="carousel">
+                                          
+                                            <ol class="carousel-indicators">
+                                                <li data-target="#carousel-2" data-slide-to="0" class="active"></li>
+                                                <li data-target="#carousel-2" data-slide-to="1"></li>
+                                                <li data-target="#carousel-2" data-slide-to="2"></li>
+                                            </ol>
+                                            
+                                            <div class="carousel-inner" role="listbox">
+                                                <div class="item active">
+                                                    <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1406097901/Domestic%20Hotels/Hotels_Goa/Salida%20Del%20Sol%20-%20Business%20Boutique%20Hotel/Restaurant1.jpg" alt="...">
+                                                    <div class="carousel-caption">
+                                                        <h3 class="text-white"></h3>
+                                                        <p class="text-white"></p>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1406097897/Domestic%20Hotels/Hotels_Goa/Salida%20Del%20Sol%20-%20Business%20Boutique%20Hotel/Restaurant2.jpg" alt="...">
+                                                    <div class="carousel-caption">
+                                                        <h3 class="text-white"></h3>
+                                                        <p class="text-white"></p>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1518669635/Hotel/Goa/00005244/5419870_SDS_Hotel_Lobby_cozhMi.jpg" alt="...">
+                                                    <div class="carousel-caption">
+                                                        <div class="carousel-caption">
+                                                            <h3 class="text-white"></h3>
+                                                            <p class="text-white"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div></div>
+                                    </div> </div>
+                            </div>                                    <div class="content">
+                                        <div class="content-header">
+                                            <div class="header-icon">
+                                                <i class="pe-7s-credit"></i>
+                                            </div>
+                                            <div class="header-title">
+                                                <h1>ROOMS</h1>
+                                            </div>
+                                        </div>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="panel panel-bd">
+                                                            <div class="panel-body">
+                                                                <!-- Start carousel -->
+                                                                <div id="carousel-1" class="carousel slide" data-ride="carousel">
+                                                                    <!-- Indicators -->
+                                                                    <ol class="carousel-indicators">
+                                                                        <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                                                                        <li data-target="#carousel-1" data-slide-to="1"></li>
+                                                                        <li data-target="#carousel-1" data-slide-to="2"></li>
+                                                                        <li data-target="#carousel-1" data-slide-to="3"></li>
+                                                                        <li data-target="#carousel-1" data-slide-to="4"></li>
+                                                                    </ol>
+                                                                    <!-- Wrapper for slides -->
+                                                                    <div class="carousel-inner" role="listbox">
+                                                                        <div class="item active">
+                                                                            <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1518669672/Hotel/Goa/00005244/5419873_SDS_Suite_Room_PRD4ew.jpg" alt="...">
+                                                                            <div class="carousel-caption">
+                                                                                <h3 class="text-white"></h3>
+                                                                                <p class="text-white"></p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item">
+                                                                            <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1518669659/Hotel/Goa/00005244/5419872_SDS_Deluxe_Room_sQtaIX.jpg" alt="...">
+                                                                            <div class="carousel-caption">
+                                                                                <h3 class="text-white"></h3>
+                                                                                <p class="text-white"></p>
+                                                                            </div>
+                                                                        </div>
+                                                                            <div class="item">
+                                                                                <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1504597758/Hotel/Goa/00005244/Deluxe_Room_Edt9el.jpg" alt="...">
+                                                                                <div class="carousel-caption">
+                                                                                    <h3 class="text-white"></h3>
+                                                                                    <p class="text-white"></p>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="item">
+                                                                                <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1406097868/Domestic%20Hotels/Hotels_Goa/Salida%20Del%20Sol%20-%20Business%20Boutique%20Hotel/Suite_Bathroom.jpg" alt="...">
+                                                                                <div class="carousel-caption">
+                                                                                    <h3 class="text-white"></h3>
+                                                                                    <p class="text-white"></p>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="item">
+                                                                                <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1406097858/Domestic%20Hotels/Hotels_Goa/Salida%20Del%20Sol%20-%20Business%20Boutique%20Hotel/Deluxe_Bathroom.jpg" alt="...">
+                                                                                <div class="carousel-caption">
+                                                                                    <h3 class="text-white"></h3>
+                                                                                    <p class="text-white"></p>
+                                                                                </div>
+                                                                            </div>
+                                                                    </div>
+                                                                    <!-- Controls -->
+                                                                    <a class="left carousel-control" href="/static/#carousel-1" role="button" data-slide="prev">
+                                                                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                                                        <span class="sr-only">Previous</span>
+                                                                    </a>
+                                                                    <a class="right carousel-control" href="/static/#carousel-1" role="button" data-slide="next">
+                                                                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                                                        <span class="sr-only">Next</span>
+                                                                    </a>
+                                                                </div>  <!-- End carousel -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="panel panel-bd">
+                                                            <div class="panel-body">
+                                                                <!-- Start carousel -->
+                                                                <div id="carousel-2" class="carousel slide" data-ride="carousel">
+                                                                    <!-- Indicators -->
+                                                                    <ol class="carousel-indicators">
+                                                                        <li data-target="#carousel-2" data-slide-to="0" class="active"></li>
+                                                                        <li data-target="#carousel-2" data-slide-to="1"></li>
+                                                                    </ol>
+                                                                    <!-- Wrapper for slides -->
+                                                                    <div class="carousel-inner" role="listbox">
+                                                                        <div class="item active">
+                                                                            <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1406097958/Domestic%20Hotels/Hotels_Goa/Salida%20Del%20Sol%20-%20Business%20Boutique%20Hotel/Deluxe_Room1.jpg" alt="...">
+                                                                            <div class="carousel-caption">
+                                                                                <h3 class="text-white"></h3>
+                                                                                <p class="text-white"></p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item">
+                                                                            <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1406097883/Domestic%20Hotels/Hotels_Goa/Salida%20Del%20Sol%20-%20Business%20Boutique%20Hotel/Suite_Room.jpg" alt="...">
+                                                                            <div class="carousel-caption">
+                                                                                <h3 class="text-white"></h3>
+                                                                                <p class="text-white"></p>
+                                                                            </div>
+                                                                        </div></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="content">
+                                                    <div class="content-header">
+                                                        <div class="header-icon">
+                                                            <i class="pe-7s-home"></i>
+                                                                            </div>
+                                                                        <div class="header-title">
+                                                                                <h1>RESTAURANT</h1>
+                                                                            </div>
+                                                                        </div>
+                                                                            <div class="row">
+                                                                                    <div class="col-sm-6">
+                                                                                        <div class="panel panel-bd">
+                                                                                            <div class="panel-body">
+                                                                                                <!-- Start carousel -->
+                                                                                                <div id="carousel-1" class="carousel slide" data-ride="carousel">
+                                                                                                    <!-- Indicators -->
+                                                                                                    <ol class="carousel-indicators">
+                                                                                                        <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                                                                                                        <li data-target="#carousel-1" data-slide-to="1"></li>
+                                                                                                        <li data-target="#carousel-1" data-slide-to="2"></li>
+                                                                                                        <li data-target="#carousel-1" data-slide-to="3"></li>
+                                                                                                    </ol>
+                                                                                                    <!-- Wrapper for slides -->
+                                                                                                    <div class="carousel-inner" role="listbox">
+                                                                                                        <div class="item active">
+                                                                                                            <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1406097999/Domestic%20Hotels/Hotels_Goa/Salida%20Del%20Sol%20-%20Business%20Boutique%20Hotel/Bar_Counter.jpg" alt="...">
+                                                                                                            <div class="carousel-caption">
+                                                                                                                <h3 class="text-white"></h3>
+                                                                                                                <p class="text-white"></p>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="item">
+                                                                                                            <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1406097908/Domestic%20Hotels/Hotels_Goa/Salida%20Del%20Sol%20-%20Business%20Boutique%20Hotel/Restaurant.jpg" alt="...">
+                                                                                                            <div class="carousel-caption">
+                                                                                                                <h3 class="text-white"></h3>
+                                                                                                                <p class="text-white"></p>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                            <div class="item">
+                                                                                                                <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1406097928/Domestic%20Hotels/Hotels_Goa/Salida%20Del%20Sol%20-%20Business%20Boutique%20Hotel/Lobby.jpg" alt="...">
+                                                                                                                <div class="carousel-caption">
+                                                                                                                    <h3 class="text-white"></h3>
+                                                                                                                    <p class="text-white"></p>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <div class="item">
+                                                                                                                <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1406097972/Domestic%20Hotels/Hotels_Goa/Salida%20Del%20Sol%20-%20Business%20Boutique%20Hotel/Cafe_Mojo.jpg" alt="...">
+                                                                                                                <div class="carousel-caption">
+                                                                                                                    <h3 class="text-white"></h3>
+                                                                                                                    <p class="text-white"></p>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                    </div>
+                                                                                                    <!-- Controls -->
+                                                                                                    <a class="left carousel-control" href="/static/#carousel-1" role="button" data-slide="prev">
+                                                                                                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                                                                                        <span class="sr-only">Previous</span>
+                                                                                                    </a>
+                                                                                                    <a class="right carousel-control" href="/static/#carousel-1" role="button" data-slide="next">
+                                                                                                        
+                                                                                                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                                                                                        <span class="sr-only">Next</span>
+                                                                                                    </a>
+                                                                                                </div>  <!-- End carousel -->
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-sm-6">
+                                                                                        <div class="panel panel-bd">
+                                                                                            <div class="panel-body">
+                                                                                                <!-- Start carousel -->
+                                                                                                <div id="carousel-2" class="carousel slide" data-ride="carousel">
+                                                                                                    <!-- Indicators -->
+                                                                                                    <ol class="carousel-indicators">
+                                                                                                        <li data-target="#carousel-2" data-slide-to="0" class="active"></li>
+                                                                                                        <li data-target="#carousel-2" data-slide-to="1"></li>
+                                                                                                        <li data-target="#carousel-2" data-slide-to="2"></li>
+                                                                                                        <li data-target="#carousel-2" data-slide-to="3"></li>
+                                                                                                    </ol>
+                                                                                                    <!-- Wrapper for slides -->
+                                                                                                    <div class="carousel-inner" role="listbox">
+                                                                                                        <div class="item active">
+                                                                                                            <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1406097901/Domestic%20Hotels/Hotels_Goa/Salida%20Del%20Sol%20-%20Business%20Boutique%20Hotel/Restaurant1.jpg" alt="...">
+                                                                                                            <div class="carousel-caption">
+                                                                                                                <h3 class="text-white"></h3>
+                                                                                                                <p class="text-white"></p>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="item">
+                                                                                                            <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1406097897/Domestic%20Hotels/Hotels_Goa/Salida%20Del%20Sol%20-%20Business%20Boutique%20Hotel/Restaurant2.jpg" alt="...">
+                                                                                                            <div class="carousel-caption">
+                                                                                                                <h3 class="text-white"></h3>
+                                                                                                                <p class="text-white"></p>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="item">
+                                                                                                            <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1518669635/Hotel/Goa/00005244/5419870_SDS_Hotel_Lobby_cozhMi.jpg" alt="...">
+                                                                                                            <div class="carousel-caption">
+                                                                                                                <h3 class="text-white"></h3>
+                                                                                                                <p class="text-white"></p>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="item">
+                                                                                                            <img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1518669691/Hotel/Goa/00005244/5419874_SDS_Breakfast_Room_GuvOHZ.jpg" alt="...">
+                                                                                                            <div class="carousel-caption">
+                                                                                                                <h3 class="text-white"></h3>
+                                                                                                                <p class="text-white"></p>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                            </div>
+                                            </div>
+                                </div></div>
+                            
+                
+                        </div>
+
+
+                        <div class="content">
+                            <div class="content-header">
+                                <div class="header-icon">
+                                    <i class="pe-7s-photo-gallery"></i>
+                                </div>
+                                <div class="header-title">
+                                    <h1>BAR</h1>
+                                </div>
+                            </div>
+                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="panel panel-bd">
+                                                            <div class="panel-body">
+                                                                <!-- Start carousel -->
+                                                                <div id="carousel-1" class="carousel slide" data-ride="carousel">
+                                                                    <!-- Indicators -->
+                                                                    <ol class="carousel-indicators">
+                                                                        <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                                                                        <li data-target="#carousel-1" data-slide-to="1"></li>
+                                                                        <li data-target="#carousel-1" data-slide-to="2"></li>
+                                                                    </ol>
+                                                                    <!-- Wrapper for slides -->
+                                                                    <div class="carousel-inner" role="listbox">
+                                                                        <div class="item active">
+                                                                            <img src="/static/assets/dist/img/carousel-31.jpg" alt="...">
+                                                                            <div class="carousel-caption">
+                                                                                <h3 class="text-white"></h3>
+                                                                                <p class="text-white"> </p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item">
+                                                                            <img src="/static/assets/dist/img/carousel-34.jpg" alt="...">
+                                                                            <div class="carousel-caption">
+                                                                                <h3 class="text-white"></h3>
+                                                                                <p class="text-white"></p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item">
+                                                                            <img src="/static/assets/dist/img/carousel-35.jpg" alt="...">
+                                                                            <div class="carousel-caption">
+                                                                                <div class="carousel-caption">
+                                                                                    <h3 class="text-white"></h3>
+                                                                                    <p class="text-white"></p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- Controls -->
+                                                                    <a class="left carousel-control" href="/static/#carousel-1" role="button" data-slide="prev">
+                                                                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                                                        <span class="sr-only">Previous</span>
+                                                                    </a>
+                                                                    <a class="right carousel-control" href="/static/#carousel-1" role="button" data-slide="next">
+                                                                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                                                        <span class="sr-only">Next</span>
+                                                                    </a>
+                                                                </div>  <!-- End carousel -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                              
+                            
+                                                    <div class="col-sm-6">
+                                                        <div class="panel panel-bd">
+                                                            <div class="panel-body">
+                                                                <!-- Start carousel -->
+                                                                <div id="carousel-2" class="carousel slide" data-ride="carousel">
+                                                                    <!-- Indicators -->
+                                                                    <ol class="carousel-indicators">
+                                                                        <li data-target="#carousel-2" data-slide-to="0" class="active"></li>
+                                                                        <li data-target="#carousel-2" data-slide-to="1"></li>
+                                                                        <li data-target="#carousel-2" data-slide-to="2"></li>
+                                                                    </ol>
+                                                                    <!-- Wrapper for slides -->
+                                                                    <div class="carousel-inner" role="listbox">
+                                                                        <div class="item active">
+                                                                            <img src="/static/assets/dist/img/carousel-32.jpg" alt="...">
+                                                                            <div class="carousel-caption">
+                                                                                <h3 class="text-white"></h3>
+                                                                                <p class="text-white"></p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item">
+                                                                            <img src="/static/assets/dist/img/carousel-33.jpg" alt="...">
+                                                                            <div class="carousel-caption">
+                                                                                <h3 class="text-white"></h3>
+                                                                                <p class="text-white"></p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item">
+                                                                            <img src="/static/assets/dist/img/carousel-36.jpg" alt="...">
+                                                                            <div class="carousel-caption">
+                                                                                <div class="carousel-caption">
+                                                                                    <h3 class="text-white"></h3>
+                                                                                    <p class="text-white"></p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <a class="left carousel-control" href="/static/#carousel-2" role="button" data-slide="prev">
+                                                                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                                                        <span class="sr-only">Previous</span>
+                                                                    </a>
+                                                                    <a class="right carousel-control" href="/static/#carousel-2" role="button" data-slide="next">
+                                                                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                                                        <span class="sr-only">Next</span>
+                                                                    </a>
+                                                                </div>
+                                                                </div>
+                                                                </div>
+                                                                </div>
+                                                
+                                                        </div>
+                                                    </div>
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- /.main content -->
+            </div><!-- /#page-wrapper -->
+        </div><!-- /#wrapper -->
+        <!-- START CORE PLUGINS -->
+        <script data-cfasync="false" src="/static/../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+        <script src="/static/assets/plugins/jQuery/jquery-1.12.4.min.js" type="text/javascript"></script>
+        <script src="/static/assets/plugins/jquery-ui-1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="/static/assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="/static/assets/plugins/metisMenu/metisMenu.min.js" type="text/javascript"></script>
+        <script src="/static/assets/plugins/lobipanel/lobipanel.min.js" type="text/javascript"></script>
+        <script src="/static/assets/plugins/animsition/js/animsition.min.js" type="text/javascript"></script>
+        <script src="/static/assets/plugins/fastclick/fastclick.min.js" type="text/javascript"></script>
+        <script src="/static/assets/plugins/slimScroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <!-- START PAGE LABEL PLUGINS -->
+        <!-- START THEME LABEL SCRIPT -->
+        <script src="/static/assets/dist/js/app.min.js" type="text/javascript"></script>
+        <script src="/static/assets/dist/js/jQuery.style.switcher.js" type="text/javascript"></script>
+    </body>
+
+<!-- Mirrored from thememinister.com/adminpage/theme/adminpage_v2.0/blank.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 Feb 2021 09:46:41 GMT -->
+</html>

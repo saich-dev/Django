@@ -1,0 +1,293 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    
+
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">        
+        <title>Edit Customer Details</title>
+        <link rel="shortcut icon" href="/static/assets/dist/img/Hotel-logo.jpg" type="image/x-icon">
+        <script src="/static/../../../../ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+        <script>
+            WebFont.load({
+                google: {
+                    families: ['Alegreya+Sans:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i', 'Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i', 'Open Sans']
+                }
+            });
+        </script>
+        
+        <link href="/static/assets/dist/css/base.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+       
+        <link href="/static/assets/dist/css/component_ui.min.css" rel="stylesheet" type="text/css"/>
+        <link id="defaultTheme" href="/static/assets/dist/css/skins/skin-dark-1.min.css" rel="stylesheet" type="text/css"/>
+        <link href="/static/assets/dist/css/custom.css" rel="stylesheet" type="text/css"/>
+        
+
+
+    </head>
+    <body>
+        <div id=wrapper class="wrapper animsition">
+          
+            <nav class="navbar navbar-fixed-top">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="material-icons">apps</i>
+                    </button>
+                    <a class="navbar-brand" href="/index">
+                        <p>SDS Hotels</p>
+                       
+                        
+                    </a>
+                </div>
+                <div class="nav-container">
+                    
+                    <ul class="nav navbar-nav hidden-xs">
+                        
+                        
+                        
+                        
+                        <li><a id="menu-toggle" href="#"><i class="material-icons">apps</i></a></li>
+                       
+                    
+                        <li><a href="/payments" target="_blank" class="btn-buy hidden-xs hidden-sm hidden-md">Book Now</a></li>
+                    </ul>
+                    <ul class="nav navbar-top-links navbar-right">
+                        
+                        
+                       
+                        
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="material-icons">person_add</i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="/customer rating panel"><i class="ti-user"></i>&nbsp; Profile</a></li>
+                                <li><a href="/customer login"><i class="ti-lock"></i>&nbsp; Lock Screen</a></li>
+                                <li><a href="/customer login"><i class="ti-layout-sidebar-left"></i>&nbsp; Logout</a></li>
+                            </ul>
+                        </li>
+                        <li class="log_out">
+                            <a href="/customer login">
+                                <i class="material-icons">power_settings_new</i>
+                            </a>
+                        </li>
+                    </ul> 
+                </div>
+            </nav>
+            
+            <div class="sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="nav-heading "> <span> Main&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                        <li>
+                            <a href="/customer login" class="material-ripple"><i class="material-icons">home</i> Dashboard <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li><a href="/index">About hotel</a></li>
+                                <li>
+                                    <a href="/Gallery">Gallery</a>
+                                    
+                                </li>
+                                </ul>
+                        </li>
+                        
+                        </li>
+                        <li class="nav-heading "> <span>Customer&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                        <li>
+                            <a href="#" class="material-ripple"><i class="material-icons">people</i> Customer Details<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li><a href="/customer rating panel">Customer ratings</a></li>
+                            </ul>
+                        </li>
+                       
+                    </li>
+                </li>
+                
+                        
+                <li class="nav-heading "> <span>Rooms&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                
+                <li>
+                    <a href="#" class="material-ripple"><i class="material-icons">hotel</i> Book a room<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="/Map panel">Locations of Hotel</a></li>
+                    
+                        <li><a href="/room1 panel">Ac Delux Rooms</a></li>
+                        <li><a href="/room2 panel">Ac Normal Rooms</a></li>
+                        <li><a href="/room3 panel">Non-Ac suite Rooms</a></li>
+                        <li><a href="/pricing panel">Pricing Of Every Room</a></li>
+                        <li><a href="/party panel">Parties & Function Halls</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/events panel" class="material-ripple"><i class="material-icons">local_offer</i> Events On Special Day's<span class="fa arrow"></span></a>    
+                </li>
+                <li class="nav-heading "> <span>Payments&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+               <li> <a href="#" class="material-ripple"><i class="material-icons">credit_card</i>Payments<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="/payments panel">Payment</a></li>
+                    </ul>
+                    </li>
+
+                    <li class="nav-heading "><span>Others&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                    <li>
+                        <a href="#" class="material-ripple"><i class="material-icons">store_mall_directory</i>Other Services<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href=" /cab panel">Cab Services</a></li> 
+                            <li><a href="/Restaurant panel">Restaurant</a></li>
+                            <li><a href="/Res food panel">Food</a></li>
+                            <li><a href=" /order panel">Online Order</a></li>
+                            <li><a href="/Res pay panel">Payment</a></li>
+                            <li><a href="/Bar panel">Bar</a></li>
+                            <li><a href="/spa panel">Spa</a></li>
+
+                        </ul>
+                    </li>
+                        <li class="nav-heading "> <span>Contact Details&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                        <li>
+                            <a href="#" class="material-ripple"><i class="material-icons">phone_in_talk</i> Contact Us<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li> <a href="/Contact panel">Contact </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                        
+                </div>
+                
+            </div>
+           
+            <div class="control-sidebar-bg"></div>
+            
+            <div id="page-wrapper">
+                
+                <div class="content">
+                   
+                    <div class="content-header">
+                        <div class="header-icon"><i class="pe-7s-users"></i></div>
+                        <div class="header-title">
+                            <h1>Edit Customer Details</h1>
+                            <small></small>
+                            <ol class="breadcrumb">
+                                <li><a href="#">Home</a></li>
+                                <li class="active">Customer ratings</li>
+                            </ol>
+                        </div>
+                    </div> 
+                    
+                       
+                            
+                                <div class="panel panel-bd">
+                                    <div class="panel-body">
+                                        <div class="container-fluid">
+                                            <div class="col-sm-2">
+                                                Name<span style="color:red">*</span>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <form>
+                                                    <input type="text" placeholder="First Name" name="fname" class="form-control">
+                                                    
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input type="text" placeholder="Last Name" name="fname" class="form-control">
+                                                </div>
+                                                </form>
+                                            </div>
+                                            <br><br>
+                                        
+                                        <div class="container-fluid">
+                                            <div class="col-sm-2">
+                                                E-mail<span style="color:red">*</span>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <form>
+                                                    <input type="email" placeholder="myname@example.com" name="fname" class="form-control">
+                                                </div>
+                                            </form>
+                                        </div>
+                                                <br><br><br>
+                                                <div class="container-fluid">
+                                                    <div class="col-sm-2">
+                                                        Mobile Number<span style="color:red">*</span>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <form>
+                                                            <input type="mobile number" placeholder="+91" name="fname" class="form-control">
+                                                        </div>
+                                                
+                                                </form>
+                                            </div>
+                                            <br><br>
+                                          
+                                            <br>
+                                                
+                                                    <div class="container-fluid">
+                                                    <div class="col-sm-2">
+                                                       
+                                                        Occupation<span style="color:red">*</span>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <form>
+                                                            <input type="manager" placeholder="manager" name="fname" class="form-control">
+                                                        </div>
+                                                        
+                                                        </form>
+                                                        
+                                                        </div><br><br><br>
+                                            <div class="row">
+                                                <div class="container-fluid">
+                                                <div class="col-sm-2 "></div>
+                                                <div class="col-sm-3 ">
+                                                <div class="col-sm-3 ">
+                                                <div>
+                                                <button onclick="myFunction()" class="btn btn-primary dropdown-toggle"
+                                                    data-toggle="dropdown"
+                                                    style="border-radius: 20px 20px 20px 20px;text-align:center">Submit</button>
+                                                                
+                                                </div>
+                                                                                        
+                                                </div></div><br><br>
+                                                                                                
+            
+                        </div></div>
+                                            
+                                <div class="panel-footer" style="text-align: center;">
+                                    Thanks For Visiting Our Hotel ..Have a Great Day
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+             
+                    <script data-cfasync="false" src="/static/../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                    <script src="/static/assets/plugins/jQuery/jquery-1.12.4.min.js" type="text/javascript"></script>
+                    <script src="/static/assets/plugins/jquery-ui-1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+                    <script src="/static/assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+                    <script src="/static/assets/plugins/metisMenu/metisMenu.min.js" type="text/javascript"></script>
+                    <script src="/static/assets/plugins/lobipanel/lobipanel.min.js" type="text/javascript"></script>
+                    <script src="/static/assets/plugins/animsition/js/animsition.min.js" type="text/javascript"></script>
+                    <script src="/static/assets/plugins/fastclick/fastclick.min.js" type="text/javascript"></script>
+                    <script src="/static/assets/plugins/slimScroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+                   
+                    <script src="/static/assets/plugins/sparkline/sparkline.min.js" type="text/javascript"></script>
+                    <script src="/static/assets/plugins/chartJs/Chart.min.js" type="text/javascript"></script>
+                    <script src="/static/assets/plugins/counterup/waypoints.js" type="text/javascript"></script>
+                    <script src="/static/assets/plugins/counterup/jquery.counterup.min.js" type="text/javascript"></script>
+                    <script src="/static/assets/plugins/monthly/monthly.js" type="text/javascript"></script>
+                   
+                    <script src="/static/assets/dist/js/app.min.js" type="text/javascript"></script>
+                    <script src="/static/assets/dist/js/jQuery.style.switcher.min.js" type="text/javascript"></script>
+
+        <script>
+            function myFunction() {
+                if (window.confirm('Click here to confirm the details')) {
+                    alert('Customer details has been saved');
+                }
+            }
+        </script>
+    </body>
+
+
+</html>

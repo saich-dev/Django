@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- Mirrored from thememinister.com/adminpage/theme/adminpage_v2.0/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 Feb 2021 09:46:30 GMT -->
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Employee Login - SDS Group of Hotels</title>
+        <link rel="shortcut icon" href="/static/assets/dist/img/Hotel-logo.jpg" type="image/x-icon">
+        <script src="../../../../ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+        <script>
+            WebFont.load({
+                google: {
+                    families: ['Alegreya+Sans:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i', 'Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i', 'Open Sans']
+                }
+            });
+        </script>
+        <!-- START GLOBAL MANDATORY STYLE -->
+        <link href="/static/assets/dist/css/base.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <link href="/static/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="/static/assets/pe-icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet" type="text/css"/>
+        <link href="/static/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+       
+        <link href="/static/assets/dist/css/component_ui.min.css" rel="stylesheet" type="text/css"/>
+       
+        <link href="/static/assets/dist/css/custom.css" rel="stylesheet" type="text/css"/>
+        <script src="\static\jquery-3.6.4.min.js"></script>      
+        
+        
+       
+    </head>
+    <body>
+         
+        
+        <!-- Content Wrapper -->
+        <div class="login-wrapper">
+            <div class="container-center lg">
+                <div class="panel panel-bd">
+                    <div class="panel-heading">
+                        <div class="view-header">
+                            <div class="header-icon">
+                                <i class="pe-7s-user"></i>
+                            </div>
+                            <div class="header-title">
+                                <h3> Employee Login</h3><br>
+                                <small><strong>Please enter your credentials to login.</strong></small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <form action="/emppanel" id="loginForm" novalidate>
+                            <!--Social Buttons--> 
+                           
+                            <div class="form-group">
+                                <label class="control-label">Username</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input id="username" type="text" class="form-control" name="" id="name" >
+                                </div>
+                                <span class="help-block small">Your unique username to app</span>
+                            </div>
+                            <h5>Or Login With</h5>
+                            <div class="form-group">
+                                <label class="control-label">Emp (Id)</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input  type="text" class="form-control" name="" id="empid" placeholder="ID">
+                                </div>
+                                <span class="help-block small">Your unique Id to app</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Password</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                                    <input type="password" class="form-control" name="password" id="password" >
+                                </div>
+                                <span class="help-block small">Your unique username to app</span>
+                            </div>
+                            <div>
+                                <button type="submit" id="submit" class="btn btn-success"><a href="/emppanel"></a>Login</button>
+                                <div class="checkbox checkbox-success">
+                                    <input id="checkbox3" type="checkbox">
+                                    <label for="checkbox3">Keep me signed in</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="bottom_text">
+                    Don't have an account? <a href="/cusregistrationpanel">Sign Up</a><br>
+                    Remind <a href="/forgetpassword">Password</a>
+                </div>
+
+            </div>
+        </div>
+        <!-- /.content-wrapper -->
+        <!-- jQuery -->
+        <script src="/static/assets/plugins/jQuery/jquery-1.12.4.min.js" type="text/javascript"></script>
+        <!-- bootstrap js -->
+        <script src="/static/assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+        <script>
+            $("#submit").click(function(){
+        
+                $(".error").hide();
+                var username=$("#username").val();
+                var empid=$("#empid").val();
+                var password=$("#password").val();
+                
+                var error=false
+                if(username==""){
+                    $("#username").after('<span class="" style="color:red">Enter the username</span>');
+                    error=true;
+                }
+                if(empid==""){
+                    $("#empid").after('<span class="" style="color:red">Enter your empid</span>');
+                    error=true;
+                }
+                if(password==""){
+                    $("#password").after('<span class="" style="color:red">Enter your password</span>');
+                    error=true;
+                }
+               
+                if((error==true)){
+                    return false;
+                }
+            })
+        </script>
+        
+    </body>
+
+<!-- Mirrored from thememinister.com/adminpage/theme/adminpage_v2.0/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 Feb 2021 09:46:30 GMT -->
+</html>
